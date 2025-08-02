@@ -259,7 +259,7 @@ export const overworldMaps: Record<string, OverworldMap> = {
         position: { x: 300, y: 600 },
         data: {
           name: 'Takeshi',
-          dialogue: 'tokyo-local-1'
+          npcId: 'shibuya-guide'
         }
       },
       {

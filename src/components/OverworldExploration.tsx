@@ -86,7 +86,7 @@ export default function OverworldExploration() {
       }
     } else if (nearestInteractable.type === 'npc') {
       dispatch(openDialogue({ 
-        npcId: nearestInteractable.data.npcId 
+        npcId: nearestInteractable.data.npcId || nearestInteractable.id
       }));
     } else if (nearestInteractable.type === 'training_center') {
       dispatch(setGamePhase('training'));
