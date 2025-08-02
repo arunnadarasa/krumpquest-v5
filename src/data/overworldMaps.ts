@@ -507,7 +507,7 @@ export const overworldMaps: Record<string, OverworldMap> = {
     height: 1200,
     tileSize: 32,
     tileSet: {
-      ground: createCityTileMap('korea-seoul', 32, 24),
+      ground: [],
       buildings: [],
       details: []
     },
@@ -621,12 +621,12 @@ export const overworldMaps: Record<string, OverworldMap> = {
     height: 28,
     tileSize: 32,
     tileSet: {
-      ground: createCityTileMap('brazil-rio', 36, 28),
+      ground: [],
       buildings: [],
       details: []
     },
-    collisionMap: generateCollisionFromTiles(createCityTileMap('brazil-rio', 36, 28)),
-    spawnPoint: { x: 64, y: 64 },
+    collisionMap: standardIsometricCollision,
+    spawnPoint: { x: 800, y: 1000 },
     districts: [
       {
         id: 'copacabana',
@@ -735,12 +735,12 @@ export const overworldMaps: Record<string, OverworldMap> = {
     height: 24,
     tileSize: 32,
     tileSet: {
-      ground: createCityTileMap('uk-london', 30, 24),
+      ground: [],
       buildings: [],
       details: []
     },
-    collisionMap: generateCollisionFromTiles(createCityTileMap('uk-london', 30, 24)),
-    spawnPoint: { x: 64, y: 64 },
+    collisionMap: standardIsometricCollision,
+    spawnPoint: { x: 800, y: 1000 },
     districts: [
       {
         id: 'east-london',
@@ -849,12 +849,12 @@ export const overworldMaps: Record<string, OverworldMap> = {
     height: 26,
     tileSize: 32,
     tileSet: {
-      ground: createCityTileMap('russia-moscow', 32, 26),
+      ground: [],
       buildings: [],
       details: []
     },
-    collisionMap: generateCollisionFromTiles(createCityTileMap('russia-moscow', 32, 26)),
-    spawnPoint: { x: 64, y: 64 },
+    collisionMap: standardIsometricCollision,
+    spawnPoint: { x: 800, y: 1000 },
     districts: [
       {
         id: 'red-square',
@@ -963,12 +963,12 @@ export const overworldMaps: Record<string, OverworldMap> = {
     height: 28,
     tileSize: 32,
     tileSet: {
-      ground: createCityTileMap('india-mumbai', 34, 28),
+      ground: [],
       buildings: [],
       details: []
     },
-    collisionMap: generateCollisionFromTiles(createCityTileMap('india-mumbai', 34, 28)),
-    spawnPoint: { x: 64, y: 64 },
+    collisionMap: standardIsometricCollision,
+    spawnPoint: { x: 800, y: 1000 },
     districts: [
       {
         id: 'bollywood-studios',
@@ -1077,12 +1077,12 @@ export const overworldMaps: Record<string, OverworldMap> = {
     height: 24,
     tileSize: 32,
     tileSet: {
-      ground: createCityTileMap('australia-sydney', 32, 24),
+      ground: [],
       buildings: [],
       details: []
     },
-    collisionMap: generateCollisionFromTiles(createCityTileMap('australia-sydney', 32, 24)),
-    spawnPoint: { x: 64, y: 64 },
+    collisionMap: standardIsometricCollision,
+    spawnPoint: { x: 800, y: 1000 },
     districts: [
       {
         id: 'bondi-beach',
@@ -1191,12 +1191,12 @@ export const overworldMaps: Record<string, OverworldMap> = {
     height: 26,
     tileSize: 32,
     tileSet: {
-      ground: createCityTileMap('mexico-mexicocity', 30, 26),
+      ground: [],
       buildings: [],
       details: []
     },
-    collisionMap: generateCollisionFromTiles(createCityTileMap('mexico-mexicocity', 30, 26)),
-    spawnPoint: { x: 64, y: 64 },
+    collisionMap: standardIsometricCollision,
+    spawnPoint: { x: 800, y: 1000 },
     districts: [
       {
         id: 'historic-center',
@@ -1305,12 +1305,12 @@ export const overworldMaps: Record<string, OverworldMap> = {
     height: 28,
     tileSize: 32,
     tileSet: {
-      ground: createCityTileMap('egypt-cairo', 32, 28),
+      ground: [],
       buildings: [],
       details: []
     },
-    collisionMap: generateCollisionFromTiles(createCityTileMap('egypt-cairo', 32, 28)),
-    spawnPoint: { x: 64, y: 64 },
+    collisionMap: standardIsometricCollision,
+    spawnPoint: { x: 800, y: 1000 },
     districts: [
       {
         id: 'ancient-quarters',
@@ -1419,12 +1419,12 @@ export const overworldMaps: Record<string, OverworldMap> = {
     height: 22,
     tileSize: 32,
     tileSet: {
-      ground: createCityTileMap('canada-toronto', 28, 22),
+      ground: [],
       buildings: [],
       details: []
     },
-    collisionMap: generateCollisionFromTiles(createCityTileMap('canada-toronto', 28, 22)),
-    spawnPoint: { x: 64, y: 64 },
+    collisionMap: standardIsometricCollision,
+    spawnPoint: { x: 800, y: 1000 },
     districts: [
       {
         id: 'downtown-core',
@@ -1533,12 +1533,12 @@ export const overworldMaps: Record<string, OverworldMap> = {
     height: 24,
     tileSize: 32,
     tileSet: {
-      ground: createCityTileMap('italy-rome', 30, 24),
+      ground: [],
       buildings: [],
       details: []
     },
-    collisionMap: generateCollisionFromTiles(createCityTileMap('italy-rome', 30, 24)),
-    spawnPoint: { x: 64, y: 64 },
+    collisionMap: standardIsometricCollision,
+    spawnPoint: { x: 800, y: 1000 },
     districts: [
       {
         id: 'historic-center',
@@ -1647,12 +1647,12 @@ export const overworldMaps: Record<string, OverworldMap> = {
     height: 26,
     tileSize: 32,
     tileSet: {
-      ground: createCityTileMap('south-africa-capetown', 32, 26),
+      ground: [],
       buildings: [],
       details: []
     },
-    collisionMap: generateCollisionFromTiles(createCityTileMap('south-africa-capetown', 32, 26)),
-    spawnPoint: { x: 64, y: 64 },
+    collisionMap: standardIsometricCollision,
+    spawnPoint: { x: 800, y: 1000 },
     districts: [
       {
         id: 'township-areas',
