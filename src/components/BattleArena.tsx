@@ -120,7 +120,8 @@ export default function BattleArena() {
   const [aiAction, setAiAction] = useState<string>('');
 
   useEffect(() => {
-    if (currentLocation && !battle.isActive) {
+    // Only initialize location-based boss battles if no battle is already active
+    if (currentLocation && !battle.isActive && !battle.currentOpponent) {
       console.log('BattleArena: Initializing battle for location:', currentLocation.id, 'expected boss:', currentLocation.ogBoss);
       
       // Get opponent data from our location opponents
@@ -141,7 +142,7 @@ export default function BattleArena() {
         console.error('BattleArena: No opponent found for location:', currentLocation.id);
       }
     }
-  }, [currentLocation, battle.isActive, dispatch, effectiveStats.stamina]);
+  }, [currentLocation, battle.isActive, battle.currentOpponent, dispatch, effectiveStats.stamina]);
 
   const handleMoveSelect = (move: Move) => {
     if (battle.turn === 'player' && battle.battlePhase === 'select') {
