@@ -1187,8 +1187,8 @@ export const overworldMaps: Record<string, OverworldMap> = {
   'mexico-mexicocity': {
     id: 'mexico-mexicocity',
     name: 'Mexico City - Historic & Lucha',
-    width: 30,
-    height: 26,
+    width: 50,
+    height: 37,
     tileSize: 32,
     tileSet: {
       ground: [],
@@ -1196,7 +1196,7 @@ export const overworldMaps: Record<string, OverworldMap> = {
       details: []
     },
     collisionMap: standardIsometricCollision,
-    spawnPoint: { x: 800, y: 1000 },
+    spawnPoint: { x: 800, y: 600 },
     districts: [
       {
         id: 'historic-center',
