@@ -34,23 +34,37 @@ import sydneyBg from '@/assets/locations/sydney-bg.jpg';
 import tokyoBg from '@/assets/locations/tokyo-bg.jpg';
 import torontoBg from '@/assets/locations/toronto-bg.jpg';
 import laOverworldBg from '@/assets/overworld/los-angeles/background.png';
+import tokyoOverworldBg from '@/assets/overworld/tokyo/background.png';
+import parisOverworldBg from '@/assets/overworld/paris/background.png';
+import berlinOverworldBg from '@/assets/overworld/berlin/background.png';
+import londonOverworldBg from '@/assets/overworld/london/background.png';
+import romeOverworldBg from '@/assets/overworld/rome/background.png';
+import moscowOverworldBg from '@/assets/overworld/moscow/background.png';
+import cairoOverworldBg from '@/assets/overworld/cairo/background.png';
+import mumbaiOverworldBg from '@/assets/overworld/mumbai/background.png';
+import seoulOverworldBg from '@/assets/overworld/seoul/background.png';
+import sydneyOverworldBg from '@/assets/overworld/sydney/background.png';
+import torontoOverworldBg from '@/assets/overworld/toronto/background.png';
+import rioOverworldBg from '@/assets/overworld/rio/background.png';
+import mexicoCityOverworldBg from '@/assets/overworld/mexico-city/background.png';
+import capeTownOverworldBg from '@/assets/overworld/cape-town/background.png';
 
 const LOCATION_BACKGROUNDS: Record<string, string> = {
-  'germany-berlin': berlinBg,
-  'egypt-cairo': cairoBg,
-  'south-africa-capetown': capeTownBg,
-  'uk-london': londonBg,
+  'germany-berlin': berlinOverworldBg,
+  'egypt-cairo': cairoOverworldBg,
+  'south-africa-capetown': capeTownOverworldBg,
+  'uk-london': londonOverworldBg,
   'usa-la': laOverworldBg,
-  'mexi-mexicocity': mexicoCityBg,
-  'russia-moscow': moscowBg,
-  'india-mumbai': mumbaiBg,
-  'france-paris': parisBg,
-  'brazil-rio': rioBg,
-  'italy-rome': romeBg,
-  'korea-seoul': seoulBg,
-  'australia-sydney': sydneyBg,
-  'japan-tokyo': tokyoBg,
-  'canada-toronto': torontoBg,
+  'mexico-mexicocity': mexicoCityOverworldBg,
+  'russia-moscow': moscowOverworldBg,
+  'india-mumbai': mumbaiOverworldBg,
+  'france-paris': parisOverworldBg,
+  'brazil-rio': rioOverworldBg,
+  'italy-rome': romeOverworldBg,
+  'korea-seoul': seoulOverworldBg,
+  'australia-sydney': sydneyOverworldBg,
+  'japan-tokyo': tokyoOverworldBg,
+  'canada-toronto': torontoOverworldBg,
 };
 
 interface LoadedImages {
