@@ -4,7 +4,7 @@ import { clearCurrentMap } from '@/store/slices/overworldSlice';
 import { setGamePhase } from '@/store/slices/gameSlice';
 import { startBattle } from '@/store/slices/battleSlice';
 import { openDialogue } from '@/store/slices/dialogueSlice';
-import { locationOpponents, locationMoves } from '@/data/opponents';
+import { locationOpponents, locationMoves, locationMiniBosses } from '@/data/opponents';
 import { getInteractionText } from '@/utils/interactionHelpers';
 import { Button } from '@/components/ui/button';
 import DialogueModal from '@/components/DialogueModal';
@@ -115,33 +115,22 @@ export default function OverworldExploration() {
           power: Math.round(move.power * (1 + cypherData.difficulty * 0.2))
         }));
 
-      // Create opponent based on cypher difficulty and participant type
-      const cypherOpponent: OpponentData = {
-        id: `cypher-${randomParticipant}`,
-        name: randomParticipant === 'local-bboy' ? 'Local B-Boy' : 'Tourist Dancer',
-        rank: 'Kid',
-        primaryStyle: 'RAW',
-        stats: {
-          strength: 40 + (cypherData.difficulty * 10),
-          defense: 35 + (cypherData.difficulty * 8),
-          speed: 45 + (cypherData.difficulty * 12),
-          charisma: 30 + (cypherData.difficulty * 5),
-          stamina: 60 + (cypherData.difficulty * 15),
-          technique: 25 + (cypherData.difficulty * 7)
-        },
-        moves: selectedMoves,
-        isOG: false
-      };
+      // Get mini-boss for current location
+      const miniBoss = locationMiniBosses[currentLocation.id];
+      
+      if (miniBoss) {
+        console.log('Starting cypher battle with mini-boss:', miniBoss);
 
-      console.log('Starting cypher battle with:', cypherOpponent);
-
-      // Start battle with cypher opponent
-      dispatch(startBattle({
-        opponent: cypherOpponent,
-        playerStamina: player.stats.stamina,
-        playerStats: player.stats
-      }));
-      dispatch(setGamePhase('battle'));
+        // Start battle with mini-boss
+        dispatch(startBattle({
+          opponent: miniBoss,
+          playerStamina: player.stats.stamina,
+          playerStats: player.stats
+        }));
+        dispatch(setGamePhase('battle'));
+      } else {
+        console.error('No mini-boss found for location:', currentLocation.id);
+      }
     }
   }, [nearestInteractable, currentLocation, dispatch, player]);
 

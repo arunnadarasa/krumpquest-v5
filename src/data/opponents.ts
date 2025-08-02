@@ -846,6 +846,264 @@ export const locationOpponents: Record<string, OpponentData> = {
   }
 };
 
+// Mini-boss versions for cypher battles - reduced stats and different styles
+export const locationMiniBosses: Record<string, OpponentData> = {
+  'usa-la': {
+    id: 'underground-legend-max',
+    name: 'Underground Legend Max',
+    rank: 'Baby',
+    primaryStyle: 'GULLY',
+    stats: {
+      strength: 18,
+      defense: 15,
+      speed: 12,
+      charisma: 14,
+      stamina: 17,
+      technique: 9
+    },
+    moves: locationMoves['usa-la'].slice(0, 3),
+    isOG: false
+  },
+  
+  'japan-tokyo': {
+    id: 'tech-disciple-akira',
+    name: 'Tech Disciple Akira',
+    rank: 'Child',
+    primaryStyle: 'TRICKS',
+    stats: {
+      strength: 22,
+      defense: 18,
+      speed: 20,
+      charisma: 16,
+      stamina: 19,
+      technique: 25
+    },
+    moves: locationMoves['japan-tokyo'].slice(0, 3),
+    isOG: false
+  },
+  
+  'korea-seoul': {
+    id: 'rhythm-runner-lee',
+    name: 'Rhythm Runner Lee',
+    rank: 'Tiny',
+    primaryStyle: 'JERKY',
+    stats: {
+      strength: 20,
+      defense: 16,
+      speed: 28,
+      charisma: 18,
+      stamina: 22,
+      technique: 20
+    },
+    moves: locationMoves['korea-seoul'].slice(0, 3),
+    isOG: false
+  },
+  
+  'france-paris': {
+    id: 'street-artiste-pierre',
+    name: 'Street Artiste Pierre',
+    rank: 'Child',
+    primaryStyle: 'FLASHY',
+    stats: {
+      strength: 25,
+      defense: 20,
+      speed: 22,
+      charisma: 28,
+      stamina: 24,
+      technique: 18
+    },
+    moves: locationMoves['france-paris'].slice(0, 3),
+    isOG: false
+  },
+  
+  'uk-london': {
+    id: 'grime-warrior-jamie',
+    name: 'Grime Warrior Jamie',
+    rank: 'Baby',
+    primaryStyle: 'GRIMEY',
+    stats: {
+      strength: 24,
+      defense: 22,
+      speed: 26,
+      charisma: 20,
+      stamina: 28,
+      technique: 16
+    },
+    moves: locationMoves['uk-london'].slice(0, 3),
+    isOG: false
+  },
+  
+  'germany-berlin': {
+    id: 'underground-beast-hans',
+    name: 'Underground Beast Hans',
+    rank: 'Tiny',
+    primaryStyle: 'RUGGED',
+    stats: {
+      strength: 32,
+      defense: 28,
+      speed: 20,
+      charisma: 22,
+      stamina: 30,
+      technique: 14
+    },
+    moves: locationMoves['germany-berlin'].slice(0, 3),
+    isOG: false
+  },
+  
+  'canada-toronto': {
+    id: 'polar-storm-alex',
+    name: 'Polar Storm Alex',
+    rank: 'Child',
+    primaryStyle: 'BULLY',
+    stats: {
+      strength: 28,
+      defense: 26,
+      speed: 18,
+      charisma: 24,
+      stamina: 32,
+      technique: 20
+    },
+    moves: locationMoves['canada-toronto'].slice(0, 3),
+    isOG: false
+  },
+  
+  'australia-sydney': {
+    id: 'surf-fury-blake',
+    name: 'Surf Fury Blake',
+    rank: 'Baby',
+    primaryStyle: 'GOOFY',
+    stats: {
+      strength: 26,
+      defense: 24,
+      speed: 30,
+      charisma: 28,
+      stamina: 26,
+      technique: 22
+    },
+    moves: locationMoves['australia-sydney'].slice(0, 3),
+    isOG: false
+  },
+  
+  'brazil-rio': {
+    id: 'carnival-prince-diego',
+    name: 'Carnival Prince Diego',
+    rank: 'Tiny',
+    primaryStyle: 'FAST',
+    stats: {
+      strength: 30,
+      defense: 25,
+      speed: 35,
+      charisma: 32,
+      stamina: 28,
+      technique: 24
+    },
+    moves: locationMoves['brazil-rio'].slice(0, 3),
+    isOG: false
+  },
+  
+  'italy-rome': {
+    id: 'renaissance-apprentice-luca',
+    name: 'Renaissance Apprentice Luca',
+    rank: 'Child',
+    primaryStyle: 'COCKY',
+    stats: {
+      strength: 28,
+      defense: 26,
+      speed: 24,
+      charisma: 35,
+      stamina: 30,
+      technique: 32
+    },
+    moves: locationMoves['italy-rome'].slice(0, 3),
+    isOG: false
+  },
+  
+  'india-mumbai': {
+    id: 'bollywood-rookie-dev',
+    name: 'Bollywood Rookie Dev',
+    rank: 'Baby',
+    primaryStyle: 'TECHNICAL',
+    stats: {
+      strength: 24,
+      defense: 28,
+      speed: 32,
+      charisma: 30,
+      stamina: 34,
+      technique: 38
+    },
+    moves: locationMoves['india-mumbai'].slice(0, 3),
+    isOG: false
+  },
+  
+  'egypt-cairo': {
+    id: 'desert-flow-omar',
+    name: 'Desert Flow Omar',
+    rank: 'Tiny',
+    primaryStyle: 'RAW',
+    stats: {
+      strength: 32,
+      defense: 30,
+      speed: 28,
+      charisma: 26,
+      stamina: 36,
+      technique: 22
+    },
+    moves: locationMoves['egypt-cairo'].slice(0, 3),
+    isOG: false
+  },
+  
+  'mexico-mexicocity': {
+    id: 'libre-spirit-miguel',
+    name: 'Libre Spirit Miguel',
+    rank: 'Child',
+    primaryStyle: 'BEASTY',
+    stats: {
+      strength: 35,
+      defense: 32,
+      speed: 26,
+      charisma: 28,
+      stamina: 38,
+      technique: 26
+    },
+    moves: locationMoves['mexico-mexicocity'].slice(0, 3),
+    isOG: false
+  },
+  
+  'russia-moscow': {
+    id: 'steel-dancer-ivan',
+    name: 'Steel Dancer Ivan',
+    rank: 'Baby',
+    primaryStyle: 'RUGGED',
+    stats: {
+      strength: 38,
+      defense: 36,
+      speed: 22,
+      charisma: 24,
+      stamina: 40,
+      technique: 28
+    },
+    moves: locationMoves['russia-moscow'].slice(0, 3),
+    isOG: false
+  },
+  
+  'south-africa-capetown': {
+    id: 'township-spirit-thabo',
+    name: 'Township Spirit Thabo',
+    rank: 'Tiny',
+    primaryStyle: 'GULLY',
+    stats: {
+      strength: 42,
+      defense: 38,
+      speed: 34,
+      charisma: 45,
+      stamina: 60,
+      technique: 50
+    },
+    moves: locationMoves['south-africa-capetown'].slice(0, 3),
+    isOG: false
+  }
+};
+
 // Player reward moves that can be learned after defeating bosses
 export const rewardMoves: Record<string, Move[]> = {
   'usa-la': [
