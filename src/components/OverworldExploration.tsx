@@ -121,13 +121,21 @@ export default function OverworldExploration() {
       if (miniBoss) {
         console.log('Starting cypher battle with mini-boss:', miniBoss);
 
-        // Start battle with mini-boss
-        dispatch(startBattle({
-          opponent: miniBoss,
-          playerStamina: player.stats.stamina,
-          playerStats: player.stats
-        }));
-        dispatch(setGamePhase('battle'));
+        try {
+          // Start battle with mini-boss
+          dispatch(startBattle({
+            opponent: miniBoss,
+            playerStamina: player.stats.stamina,
+            playerStats: player.stats
+          }));
+          
+          // Add delay before phase transition to prevent HTTP/2 protocol errors
+          setTimeout(() => {
+            dispatch(setGamePhase('battle'));
+          }, 100);
+        } catch (error) {
+          console.error('Error starting cypher battle:', error);
+        }
       } else {
         console.error('No mini-boss found for location:', currentLocation?.id || 'usa-la');
       }
