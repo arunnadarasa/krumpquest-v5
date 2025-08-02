@@ -279,8 +279,8 @@ export const overworldMaps: Record<string, OverworldMap> = {
   'france-paris': {
     id: 'france-paris',
     name: 'Paris - Seine & Montmartre',
-    width: 1600,
-    height: 1200,
+    width: 50,
+    height: 37,
     tileSize: 32,
     tileSet: {
       ground: [],
@@ -327,7 +327,7 @@ export const overworldMaps: Record<string, OverworldMap> = {
       [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
       [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
     ],
-    spawnPoint: { x: 800, y: 1000 },
+    spawnPoint: { x: 800, y: 600 },
     districts: [
       {
         id: 'seine-riverside',
@@ -417,8 +417,8 @@ export const overworldMaps: Record<string, OverworldMap> = {
   'germany-berlin': {
     id: 'germany-berlin',
     name: 'Berlin - Underground Scene',
-    width: 1600,
-    height: 1200,
+    width: 50,
+    height: 37,
     tileSize: 32,
     tileSet: {
       ground: [],
@@ -426,7 +426,7 @@ export const overworldMaps: Record<string, OverworldMap> = {
       details: []
     },
     collisionMap: standardIsometricCollision,
-    spawnPoint: { x: 800, y: 1000 },
+    spawnPoint: { x: 800, y: 600 },
     districts: [
       {
         id: 'kreuzberg',
@@ -626,7 +626,7 @@ export const overworldMaps: Record<string, OverworldMap> = {
       details: []
     },
     collisionMap: standardIsometricCollision,
-    spawnPoint: { x: 800, y: 1000 },
+    spawnPoint: { x: 800, y: 600 },
     districts: [
       {
         id: 'copacabana',
