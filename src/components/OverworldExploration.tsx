@@ -4,7 +4,7 @@ import { clearCurrentMap } from '@/store/slices/overworldSlice';
 import { setGamePhase } from '@/store/slices/gameSlice';
 import { startBattle } from '@/store/slices/battleSlice';
 import { openDialogue } from '@/store/slices/dialogueSlice';
-import { locationOpponents } from '@/data/opponents';
+import { locationOpponents, locationMoves } from '@/data/opponents';
 import { getInteractionText } from '@/utils/interactionHelpers';
 import { Button } from '@/components/ui/button';
 import DialogueModal from '@/components/DialogueModal';
@@ -102,6 +102,19 @@ export default function OverworldExploration() {
       const participants = cypherData.participants || ['local-bboy', 'tourist-dancer'];
       const randomParticipant = participants[Math.floor(Math.random() * participants.length)];
       
+      // Get location-appropriate moves for cypher opponent
+      const locationKey = currentLocation?.id || 'usa-la';
+      const availableMoves = locationMoves[locationKey] || locationMoves['usa-la'];
+      
+      // Select 2-3 random moves and scale their power based on difficulty
+      const selectedMoves = availableMoves
+        .sort(() => Math.random() - 0.5)
+        .slice(0, 2 + Math.floor(Math.random() * 2))
+        .map(move => ({
+          ...move,
+          power: Math.round(move.power * (1 + cypherData.difficulty * 0.2))
+        }));
+
       // Create opponent based on cypher difficulty and participant type
       const cypherOpponent: OpponentData = {
         id: `cypher-${randomParticipant}`,
@@ -116,7 +129,7 @@ export default function OverworldExploration() {
           stamina: 60 + (cypherData.difficulty * 15),
           technique: 25 + (cypherData.difficulty * 7)
         },
-        moves: [], // Will be populated by battle system
+        moves: selectedMoves,
         isOG: false
       };
 
