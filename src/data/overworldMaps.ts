@@ -845,8 +845,8 @@ export const overworldMaps: Record<string, OverworldMap> = {
   'russia-moscow': {
     id: 'russia-moscow',
     name: 'Moscow - Red Square & Industrial',
-    width: 32,
-    height: 26,
+    width: 50,
+    height: 37,
     tileSize: 32,
     tileSet: {
       ground: [],
@@ -854,7 +854,7 @@ export const overworldMaps: Record<string, OverworldMap> = {
       details: []
     },
     collisionMap: standardIsometricCollision,
-    spawnPoint: { x: 800, y: 1000 },
+    spawnPoint: { x: 800, y: 600 },
     districts: [
       {
         id: 'red-square',
