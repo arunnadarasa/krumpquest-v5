@@ -8,6 +8,7 @@ import { locationOpponents } from '@/data/opponents';
 import { getInteractionText } from '@/utils/interactionHelpers';
 import { Button } from '@/components/ui/button';
 import DialogueModal from '@/components/DialogueModal';
+import { OpponentData } from '@/types/game';
 
 export default function OverworldExploration() {
   const dispatch = useAppDispatch();
@@ -22,6 +23,7 @@ export default function OverworldExploration() {
   
   const { currentMap } = useAppSelector(state => state.overworld);
   const { currentLocation } = useAppSelector(state => state.world);
+  const player = useAppSelector(state => state.player);
 
   // Initialize positions when map loads
   useEffect(() => {
@@ -86,6 +88,37 @@ export default function OverworldExploration() {
       dispatch(setGamePhase('krump_wisdom'));
     } else if (nearestInteractable.type === 'record_shop') {
       dispatch(setGamePhase('record_shop'));
+    } else if (nearestInteractable.type === 'cypher') {
+      // Create a random cypher opponent from the participants
+      const cypherData = nearestInteractable.data;
+      const participants = cypherData.participants || ['local-bboy', 'tourist-dancer'];
+      const randomParticipant = participants[Math.floor(Math.random() * participants.length)];
+      
+      // Create opponent based on cypher difficulty and participant type
+      const cypherOpponent: OpponentData = {
+        id: `cypher-${randomParticipant}`,
+        name: randomParticipant === 'local-bboy' ? 'Local B-Boy' : 'Tourist Dancer',
+        rank: 'Kid',
+        primaryStyle: 'RAW',
+        stats: {
+          strength: 40 + (cypherData.difficulty * 10),
+          defense: 35 + (cypherData.difficulty * 8),
+          speed: 45 + (cypherData.difficulty * 12),
+          charisma: 30 + (cypherData.difficulty * 5),
+          stamina: 60 + (cypherData.difficulty * 15),
+          technique: 25 + (cypherData.difficulty * 7)
+        },
+        moves: [], // Will be populated by battle system
+        isOG: false
+      };
+
+      // Start battle with cypher opponent
+      dispatch(startBattle({
+        opponent: cypherOpponent,
+        playerStamina: player.stats.stamina,
+        playerStats: player.stats
+      }));
+      dispatch(setGamePhase('battle'));
     }
   }, [nearestInteractable, currentLocation, dispatch]);
 
