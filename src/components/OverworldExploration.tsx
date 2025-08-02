@@ -115,8 +115,8 @@ export default function OverworldExploration() {
           power: Math.round(move.power * (1 + cypherData.difficulty * 0.2))
         }));
 
-      // Get mini-boss for current location
-      const miniBoss = locationMiniBosses[currentLocation.id];
+      // Get mini-boss for current location with fallback
+      const miniBoss = locationMiniBosses[currentLocation?.id || 'usa-la'];
       
       if (miniBoss) {
         console.log('Starting cypher battle with mini-boss:', miniBoss);
@@ -129,7 +129,7 @@ export default function OverworldExploration() {
         }));
         dispatch(setGamePhase('battle'));
       } else {
-        console.error('No mini-boss found for location:', currentLocation.id);
+        console.error('No mini-boss found for location:', currentLocation?.id || 'usa-la');
       }
     }
   }, [nearestInteractable, currentLocation, dispatch, player]);
