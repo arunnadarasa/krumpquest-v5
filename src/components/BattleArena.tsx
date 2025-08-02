@@ -5,7 +5,7 @@ import { Progress } from '@/components/ui/progress';
 import { Badge } from '@/components/ui/badge';
 import { useAppDispatch, useAppSelector } from '@/hooks/useAppSelector';
 import { startBattle, endBattle, addMoveToCombo, executeCombo, switchTurn, setBattlePhase, restTurn, regenerateStamina, clearCombo } from '@/store/slices/battleSlice';
-import { setGamePhase, goBackToPrevious } from '@/store/slices/gameSlice';
+import { setGamePhase } from '@/store/slices/gameSlice';
 import { gainExperience, gainStreetCred, learnMove, rankUp } from '@/store/slices/playerSlice';
 import { completeLocation, clearCurrentLocation } from '@/store/slices/worldSlice';
 import { Move, MoveType, KrumpStyle } from '@/types/game';
@@ -229,7 +229,7 @@ export default function BattleArena() {
     // Clear the current location to prevent state persistence issues
     dispatch(clearCurrentLocation());
     dispatch(endBattle());
-    dispatch(goBackToPrevious());
+    dispatch(setGamePhase('world_map'));
   };
 
   // Check for battle end conditions
@@ -747,7 +747,7 @@ export default function BattleArena() {
                 </Button>
                 
                 <Button
-                  onClick={() => dispatch(goBackToPrevious())}
+                  onClick={() => dispatch(setGamePhase('world_map'))}
                   variant="outline"
                   className="border-red-500 text-red-400 hover:bg-red-500/20 px-2 md:px-3 py-1 md:py-2 text-xs md:text-sm"
                 >
