@@ -959,8 +959,8 @@ export const overworldMaps: Record<string, OverworldMap> = {
   'india-mumbai': {
     id: 'india-mumbai',
     name: 'Mumbai - Bollywood & Streets',
-    width: 34,
-    height: 28,
+    width: 50,
+    height: 37,
     tileSize: 32,
     tileSet: {
       ground: [],
@@ -968,7 +968,7 @@ export const overworldMaps: Record<string, OverworldMap> = {
       details: []
     },
     collisionMap: standardIsometricCollision,
-    spawnPoint: { x: 800, y: 1000 },
+    spawnPoint: { x: 800, y: 600 },
     districts: [
       {
         id: 'bollywood-studios',
