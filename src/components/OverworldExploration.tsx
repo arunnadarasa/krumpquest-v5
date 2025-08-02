@@ -70,12 +70,18 @@ export default function OverworldExploration() {
   }, [currentMap]);
 
   const handleInteraction = useCallback(() => {
+    console.log('Interaction triggered!', nearestInteractable?.type);
+    
     if (!nearestInteractable) return;
     
     if (nearestInteractable.type === 'battle_trigger') {
       const opponents = locationOpponents[currentLocation?.id || ''];
       if (opponents && Array.isArray(opponents) && opponents.length > 0) {
-        dispatch(startBattle(opponents[0]));
+        dispatch(startBattle({
+          opponent: opponents[0],
+          playerStamina: player.stats.stamina,
+          playerStats: player.stats
+        }));
         dispatch(setGamePhase('battle'));
       }
     } else if (nearestInteractable.type === 'npc') {
@@ -89,6 +95,8 @@ export default function OverworldExploration() {
     } else if (nearestInteractable.type === 'record_shop') {
       dispatch(setGamePhase('record_shop'));
     } else if (nearestInteractable.type === 'cypher') {
+      console.log('Cypher interaction triggered!', nearestInteractable.data);
+      
       // Create a random cypher opponent from the participants
       const cypherData = nearestInteractable.data;
       const participants = cypherData.participants || ['local-bboy', 'tourist-dancer'];
@@ -112,6 +120,8 @@ export default function OverworldExploration() {
         isOG: false
       };
 
+      console.log('Starting cypher battle with:', cypherOpponent);
+
       // Start battle with cypher opponent
       dispatch(startBattle({
         opponent: cypherOpponent,
@@ -120,7 +130,7 @@ export default function OverworldExploration() {
       }));
       dispatch(setGamePhase('battle'));
     }
-  }, [nearestInteractable, currentLocation, dispatch]);
+  }, [nearestInteractable, currentLocation, dispatch, player]);
 
   // Game loop
   const gameLoop = useCallback(() => {
