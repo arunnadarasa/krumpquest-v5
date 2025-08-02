@@ -1651,8 +1651,8 @@ export const overworldMaps: Record<string, OverworldMap> = {
       buildings: [],
       details: []
     },
-    collisionMap: standardIsometricCollision,
-    spawnPoint: { x: 800, y: 1000 },
+    collisionMap: Array(26).fill(null).map(() => Array(32).fill(0)),
+    spawnPoint: { x: 500, y: 400 },
     districts: [
       {
         id: 'township-areas',
