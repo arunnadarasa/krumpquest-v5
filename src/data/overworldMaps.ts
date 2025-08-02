@@ -731,8 +731,8 @@ export const overworldMaps: Record<string, OverworldMap> = {
   'uk-london': {
     id: 'uk-london',
     name: 'London - East End & Underground',
-    width: 30,
-    height: 24,
+    width: 50,
+    height: 37,
     tileSize: 32,
     tileSet: {
       ground: [],
@@ -740,7 +740,7 @@ export const overworldMaps: Record<string, OverworldMap> = {
       details: []
     },
     collisionMap: standardIsometricCollision,
-    spawnPoint: { x: 800, y: 1000 },
+    spawnPoint: { x: 800, y: 600 },
     districts: [
       {
         id: 'east-london',
