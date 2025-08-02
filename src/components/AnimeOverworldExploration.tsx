@@ -351,6 +351,17 @@ export default function AnimeOverworldExploration() {
         ctx.fillStyle = '#1a1a2e';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         
+        // Render background image first (for isometric maps)
+        if (loadedImages.current.background) {
+          ctx.drawImage(
+            loadedImages.current.background,
+            -cameraPos.x,
+            -cameraPos.y,
+            currentMap.width * currentMap.tileSize,
+            currentMap.height * currentMap.tileSize
+          );
+        }
+        
         // Apply atmosphere ambient color
         if (currentMap.atmosphere) {
           ctx.fillStyle = currentMap.atmosphere.ambientColor + '20'; // Add transparency
@@ -358,7 +369,7 @@ export default function AnimeOverworldExploration() {
         }
 
         // Draw tile-based pixel art map
-        if (currentMap.tileSet?.ground) {
+        if (currentMap.tileSet?.ground && currentMap.tileSet.ground.length > 0) {
           const startTileX = Math.floor(cameraPos.x / currentMap.tileSize);
           const startTileY = Math.floor(cameraPos.y / currentMap.tileSize);
           const endTileX = Math.min(startTileX + Math.ceil(canvas.width / currentMap.tileSize) + 1, currentMap.width);

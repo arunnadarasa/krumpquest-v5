@@ -9,7 +9,7 @@ export const overworldMaps: Record<string, OverworldMap> = {
     height: 24,
     tileSize: 32,
     tileSet: {
-      ground: createCityTileMap('usa-la', 32, 24),
+      ground: [],
       buildings: [],
       details: []
     },
