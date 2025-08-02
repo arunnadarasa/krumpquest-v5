@@ -1301,8 +1301,8 @@ export const overworldMaps: Record<string, OverworldMap> = {
   'egypt-cairo': {
     id: 'egypt-cairo',
     name: 'Cairo - Ancient & Modern',
-    width: 32,
-    height: 28,
+    width: 50,
+    height: 37,
     tileSize: 32,
     tileSet: {
       ground: [],
@@ -1310,7 +1310,7 @@ export const overworldMaps: Record<string, OverworldMap> = {
       details: []
     },
     collisionMap: standardIsometricCollision,
-    spawnPoint: { x: 800, y: 1000 },
+    spawnPoint: { x: 800, y: 600 },
     districts: [
       {
         id: 'ancient-quarters',
