@@ -13,8 +13,36 @@ export const overworldMaps: Record<string, OverworldMap> = {
       buildings: [],
       details: []
     },
-    collisionMap: generateCollisionFromTiles(createCityTileMap('usa-la', 32, 24)),
-    spawnPoint: { x: 64, y: 64 },
+    collisionMap: [
+      // Custom collision map for isometric LA background
+      // 0 = walkable, 1 = collision
+      [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1],
+      [1,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+    ],
+    spawnPoint: { x: 512, y: 400 },
     districts: [
       {
         id: 'venice-beach',
@@ -43,7 +71,7 @@ export const overworldMaps: Record<string, OverworldMap> = {
     interactables: [
       {
         id: 'movement-lifestyle-studio',
-        position: { x: 12 * 32, y: 4 * 32 },
+        position: { x: 8 * 32, y: 6 * 32 },
         type: 'dance_studio',
         data: { 
           name: 'Movement Lifestyle Studio',
@@ -54,7 +82,7 @@ export const overworldMaps: Record<string, OverworldMap> = {
       },
       {
         id: 'fat-beats-records',
-        position: { x: 22 * 32, y: 10 * 32 },
+        position: { x: 18 * 32, y: 8 * 32 },
         type: 'record_shop',
         data: { 
           name: 'Fat Beats Records',
@@ -64,7 +92,7 @@ export const overworldMaps: Record<string, OverworldMap> = {
       },
       {
         id: 'warehouse-training',
-        position: { x: 10 * 32, y: 18 * 32 },
+        position: { x: 12 * 32, y: 16 * 32 },
         type: 'training_spot',
         data: { 
           name: 'Abandoned Warehouse',
@@ -75,7 +103,7 @@ export const overworldMaps: Record<string, OverworldMap> = {
       },
       {
         id: 'big-homie-battle',
-        position: { x: 26 * 32, y: 20 * 32 },
+        position: { x: 24 * 32, y: 18 * 32 },
         type: 'battle_trigger',
         data: { 
           bossId: 'big-homie',
@@ -87,7 +115,7 @@ export const overworldMaps: Record<string, OverworldMap> = {
       // NPCs
       {
         id: 'venice-local-npc',
-        position: { x: 6 * 32, y: 8 * 32 },
+        position: { x: 6 * 32, y: 10 * 32 },
         type: 'npc',
         data: { 
           npcId: 'venice-local',
@@ -97,7 +125,7 @@ export const overworldMaps: Record<string, OverworldMap> = {
       },
       {
         id: 'studio-owner-npc',
-        position: { x: 14 * 32, y: 5 * 32 },
+        position: { x: 10 * 32, y: 7 * 32 },
         type: 'npc',
         data: { 
           npcId: 'studio-owner',
@@ -108,7 +136,7 @@ export const overworldMaps: Record<string, OverworldMap> = {
       // Training Center Access
       {
         id: 'training-center-access',
-        position: { x: 4 * 32, y: 16 * 32 },
+        position: { x: 4 * 32, y: 14 * 32 },
         type: 'training_center',
         data: { 
           name: 'Venice Training Center',
@@ -119,7 +147,7 @@ export const overworldMaps: Record<string, OverworldMap> = {
       // Wisdom Center Access
       {
         id: 'wisdom-center-access',
-        position: { x: 28 * 32, y: 4 * 32 },
+        position: { x: 26 * 32, y: 6 * 32 },
         type: 'wisdom_center',
         data: { 
           name: 'Krump Wisdom Library',

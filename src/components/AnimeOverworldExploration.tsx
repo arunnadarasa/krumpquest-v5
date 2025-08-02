@@ -33,13 +33,14 @@ import seoulBg from '@/assets/locations/seoul-bg.jpg';
 import sydneyBg from '@/assets/locations/sydney-bg.jpg';
 import tokyoBg from '@/assets/locations/tokyo-bg.jpg';
 import torontoBg from '@/assets/locations/toronto-bg.jpg';
+import laOverworldBg from '@/assets/overworld/los-angeles/background.png';
 
 const LOCATION_BACKGROUNDS: Record<string, string> = {
   'germany-berlin': berlinBg,
   'egypt-cairo': cairoBg,
   'south-africa-capetown': capeTownBg,
   'uk-london': londonBg,
-  'usa-la': losAngelesBg,
+  'usa-la': laOverworldBg,
   'mexi-mexicocity': mexicoCityBg,
   'russia-moscow': moscowBg,
   'india-mumbai': mumbaiBg,
