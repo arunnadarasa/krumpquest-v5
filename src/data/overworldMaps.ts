@@ -1073,8 +1073,8 @@ export const overworldMaps: Record<string, OverworldMap> = {
   'australia-sydney': {
     id: 'australia-sydney',
     name: 'Sydney - Bondi & Urban Core',
-    width: 32,
-    height: 24,
+    width: 50,
+    height: 37,
     tileSize: 32,
     tileSet: {
       ground: [],
@@ -1082,7 +1082,7 @@ export const overworldMaps: Record<string, OverworldMap> = {
       details: []
     },
     collisionMap: standardIsometricCollision,
-    spawnPoint: { x: 800, y: 1000 },
+    spawnPoint: { x: 800, y: 600 },
     districts: [
       {
         id: 'bondi-beach',
