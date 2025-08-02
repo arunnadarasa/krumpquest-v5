@@ -42,14 +42,6 @@ export const overworldMaps: Record<string, OverworldMap> = {
     },
     interactables: [
       {
-        id: 'venice-cypher',
-        position: { x: 8 * 32, y: 6 * 32 },
-        type: 'cypher',
-        data: { participants: ['local-bboy', 'tourist-dancer'], difficulty: 2 },
-        size: { x: 64, y: 64 },
-        sprite: 'cypher-circle'
-      },
-      {
         id: 'movement-lifestyle-studio',
         position: { x: 12 * 32, y: 4 * 32 },
         type: 'dance_studio',
@@ -177,13 +169,6 @@ export const overworldMaps: Record<string, OverworldMap> = {
     },
     interactables: [
       {
-        id: 'shibuya-crossing-cypher',
-        position: { x: 10 * 32, y: 8 * 32 },
-        type: 'cypher',
-        data: { participants: ['tokyo-bboy', 'street-dancer'], difficulty: 4 },
-        size: { x: 96, y: 96 }
-      },
-      {
         id: 'en-dance-studio',
         position: { x: 25 * 32, y: 7 * 32 },
         type: 'dance_studio',
@@ -298,12 +283,6 @@ export const overworldMaps: Record<string, OverworldMap> = {
     },
     interactables: [
       {
-        id: 'seine-bridge-cypher',
-        position: { x: 15 * 32, y: 11 * 32 },
-        type: 'cypher',
-        data: { participants: ['paris-krumper', 'seine-dancer'] }
-      },
-      {
         id: 'studio-harmonic',
         position: { x: 12 * 32, y: 4 * 32 },
         type: 'dance_studio',
@@ -403,12 +382,6 @@ export const overworldMaps: Record<string, OverworldMap> = {
     },
     interactables: [
       {
-        id: 'kreuzberg-cypher',
-        position: { x: 8 * 32, y: 8 * 32 },
-        type: 'cypher',
-        data: { participants: ['berlin-krumper', 'underground-dancer'] }
-      },
-      {
         id: 'maze-club',
         position: { x: 20 * 32, y: 20 * 32 },
         type: 'club',
@@ -494,13 +467,6 @@ export const overworldMaps: Record<string, OverworldMap> = {
       ambientColor: '#FF1493'
     },
     interactables: [
-      {
-        id: 'gangnam-style-cypher',
-        position: { x: 8 * 32, y: 6 * 32 },
-        type: 'cypher',
-        data: { participants: ['kpop-dancer', 'street-krumper'], difficulty: 5 },
-        size: { x: 64, y: 64 }
-      },
       {
         id: 'rhythm-dance-academy',
         position: { x: 22 * 32, y: 10 * 32 },
@@ -616,13 +582,6 @@ export const overworldMaps: Record<string, OverworldMap> = {
     },
     interactables: [
       {
-        id: 'beach-carnival-cypher',
-        position: { x: 18 * 32, y: 6 * 32 },
-        type: 'cypher',
-        data: { participants: ['samba-dancer', 'capoeira-krumper'], difficulty: 4 },
-        size: { x: 96, y: 96 }
-      },
-      {
         id: 'favela-dance-studio',
         position: { x: 10 * 32, y: 18 * 32 },
         type: 'dance_studio',
@@ -736,13 +695,6 @@ export const overworldMaps: Record<string, OverworldMap> = {
       ambientColor: '#696969'
     },
     interactables: [
-      {
-        id: 'east-end-cypher',
-        position: { x: 8 * 32, y: 6 * 32 },
-        type: 'cypher',
-        data: { participants: ['london-bboy', 'grime-dancer'], difficulty: 5 },
-        size: { x: 64, y: 64 }
-      },
       {
         id: 'brick-lane-studio',
         position: { x: 22 * 32, y: 8 * 32 },
@@ -858,13 +810,6 @@ export const overworldMaps: Record<string, OverworldMap> = {
     },
     interactables: [
       {
-        id: 'red-square-cypher',
-        position: { x: 16 * 32, y: 6 * 32 },
-        type: 'cypher',
-        data: { participants: ['moscow-breaker', 'soviet-dancer'], difficulty: 5 },
-        size: { x: 64, y: 64 }
-      },
-      {
         id: 'factory-dance-hall',
         position: { x: 8 * 32, y: 18 * 32 },
         type: 'dance_studio',
@@ -978,13 +923,6 @@ export const overworldMaps: Record<string, OverworldMap> = {
       ambientColor: '#FF8C00'
     },
     interactables: [
-      {
-        id: 'bollywood-cypher',
-        position: { x: 8 * 32, y: 6 * 32 },
-        type: 'cypher',
-        data: { participants: ['bollywood-dancer', 'street-krumper'], difficulty: 4 },
-        size: { x: 96, y: 96 }
-      },
       {
         id: 'dance-academy-mumbai',
         position: { x: 14 * 32, y: 18 * 32 },
@@ -1100,13 +1038,6 @@ export const overworldMaps: Record<string, OverworldMap> = {
     },
     interactables: [
       {
-        id: 'bondi-beach-cypher',
-        position: { x: 15 * 32, y: 5 * 32 },
-        type: 'cypher',
-        data: { participants: ['surfer-dancer', 'aussie-krumper'], difficulty: 3 },
-        size: { x: 64, y: 64 }
-      },
-      {
         id: 'sydney-dance-studio',
         position: { x: 16 * 32, y: 16 * 32 },
         type: 'dance_studio',
@@ -1220,13 +1151,6 @@ export const overworldMaps: Record<string, OverworldMap> = {
       ambientColor: '#FF6347'
     },
     interactables: [
-      {
-        id: 'zocalo-cypher',
-        position: { x: 15 * 32, y: 6 * 32 },
-        type: 'cypher',
-        data: { participants: ['lucha-dancer', 'aztec-krumper'], difficulty: 4 },
-        size: { x: 96, y: 96 }
-      },
       {
         id: 'lucha-dance-academy',
         position: { x: 8 * 32, y: 18 * 32 },
@@ -1342,13 +1266,6 @@ export const overworldMaps: Record<string, OverworldMap> = {
     },
     interactables: [
       {
-        id: 'pyramid-cypher',
-        position: { x: 8 * 32, y: 8 * 32 },
-        type: 'cypher',
-        data: { participants: ['pharaoh-dancer', 'nile-krumper'], difficulty: 5 },
-        size: { x: 96, y: 96 }
-      },
-      {
         id: 'cairo-dance-temple',
         position: { x: 24 * 32, y: 12 * 32 },
         type: 'dance_studio',
@@ -1462,13 +1379,6 @@ export const overworldMaps: Record<string, OverworldMap> = {
       ambientColor: '#E6E6FA'
     },
     interactables: [
-      {
-        id: 'cn-tower-cypher',
-        position: { x: 14 * 32, y: 6 * 32 },
-        type: 'cypher',
-        data: { participants: ['canadian-bboy', 'arctic-dancer'], difficulty: 4 },
-        size: { x: 64, y: 64 }
-      },
       {
         id: 'toronto-dance-center',
         position: { x: 18 * 32, y: 16 * 32 },
@@ -1584,13 +1494,6 @@ export const overworldMaps: Record<string, OverworldMap> = {
     },
     interactables: [
       {
-        id: 'colosseum-cypher',
-        position: { x: 15 * 32, y: 6 * 32 },
-        type: 'cypher',
-        data: { participants: ['roman-dancer', 'renaissance-krumper'], difficulty: 5 },
-        size: { x: 96, y: 96 }
-      },
-      {
         id: 'trastevere-studio',
         position: { x: 8 * 32, y: 18 * 32 },
         type: 'dance_studio',
@@ -1704,13 +1607,6 @@ export const overworldMaps: Record<string, OverworldMap> = {
       ambientColor: '#FF4500'
     },
     interactables: [
-      {
-        id: 'township-cypher',
-        position: { x: 8 * 32, y: 8 * 32 },
-        type: 'cypher',
-        data: { participants: ['township-dancer', 'zulu-krumper'], difficulty: 4 },
-        size: { x: 96, y: 96 }
-      },
       {
         id: 'cape-town-dance-academy',
         position: { x: 24 * 32, y: 12 * 32 },

@@ -94,51 +94,6 @@ export default function OverworldExploration() {
       dispatch(setGamePhase('krump_wisdom'));
     } else if (nearestInteractable.type === 'record_shop') {
       dispatch(setGamePhase('record_shop'));
-    } else if (nearestInteractable.type === 'cypher') {
-      console.log('Cypher interaction triggered!', nearestInteractable.data);
-      
-      // Create a random cypher opponent from the participants
-      const cypherData = nearestInteractable.data;
-      const participants = cypherData.participants || ['local-bboy', 'tourist-dancer'];
-      const randomParticipant = participants[Math.floor(Math.random() * participants.length)];
-      
-      // Get location-appropriate moves for cypher opponent
-      const locationKey = currentLocation?.id || 'usa-la';
-      const availableMoves = locationMoves[locationKey] || locationMoves['usa-la'];
-      
-      // Select 2-3 random moves and scale their power based on difficulty
-      const selectedMoves = availableMoves
-        .sort(() => Math.random() - 0.5)
-        .slice(0, 2 + Math.floor(Math.random() * 2))
-        .map(move => ({
-          ...move,
-          power: Math.round(move.power * (1 + cypherData.difficulty * 0.2))
-        }));
-
-      // Get mini-boss for current location with fallback
-      const miniBoss = locationMiniBosses[currentLocation?.id || 'usa-la'];
-      
-      if (miniBoss) {
-        console.log('Starting cypher battle with mini-boss:', miniBoss);
-
-        try {
-          // Start battle with mini-boss
-          dispatch(startBattle({
-            opponent: miniBoss,
-            playerStamina: player.stats.stamina,
-            playerStats: player.stats
-          }));
-          
-          // Add delay before phase transition to prevent HTTP/2 protocol errors
-          setTimeout(() => {
-            dispatch(setGamePhase('battle'));
-          }, 100);
-        } catch (error) {
-          console.error('Error starting cypher battle:', error);
-        }
-      } else {
-        console.error('No mini-boss found for location:', currentLocation?.id || 'usa-la');
-      }
     }
   }, [nearestInteractable, currentLocation, dispatch, player]);
 

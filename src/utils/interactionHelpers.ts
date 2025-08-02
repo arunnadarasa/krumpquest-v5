@@ -3,8 +3,6 @@ export const getInteractionText = (type: string): string => {
   switch (type) {
     case 'dance_studio':
       return 'ENTER';
-    case 'cypher':
-      return 'JOIN';
     case 'record_shop':
       return 'BROWSE';
     case 'club':
