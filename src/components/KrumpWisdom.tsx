@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '@/hooks/useAppSelector';
-import { setGamePhase } from '@/store/slices/gameSlice';
+import { setGamePhase, goBackToPrevious } from '@/store/slices/gameSlice';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -127,6 +127,7 @@ const wisdomTopics: WisdomTopic[] = [
 export default function KrumpWisdom() {
   const dispatch = useAppDispatch();
   const player = useAppSelector(state => state.player);
+  const { previousPhase } = useAppSelector(state => state.game);
   const [selectedTopic, setSelectedTopic] = useState<string | null>(null);
   const [currentContentIndex, setCurrentContentIndex] = useState(0);
   const [readingProgress, setReadingProgress] = useState<ReadingProgress>({});
@@ -172,7 +173,11 @@ export default function KrumpWisdom() {
       setSelectedTopic(null);
       setCurrentContentIndex(0);
     } else {
-      dispatch(setGamePhase('world_map'));
+      if (previousPhase === 'overworld_exploration') {
+        dispatch(setGamePhase('overworld_exploration'));
+      } else {
+        dispatch(setGamePhase('world_map'));
+      }
     }
   };
 

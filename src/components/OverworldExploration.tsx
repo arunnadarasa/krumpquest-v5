@@ -80,6 +80,12 @@ export default function OverworldExploration() {
       dispatch(openDialogue({ 
         npcId: nearestInteractable.data.npcId 
       }));
+    } else if (nearestInteractable.type === 'training_center') {
+      dispatch(setGamePhase('training'));
+    } else if (nearestInteractable.type === 'wisdom_center') {
+      dispatch(setGamePhase('krump_wisdom'));
+    } else if (nearestInteractable.type === 'record_shop') {
+      dispatch(setGamePhase('record_shop'));
     }
   }, [nearestInteractable, currentLocation, dispatch]);
 

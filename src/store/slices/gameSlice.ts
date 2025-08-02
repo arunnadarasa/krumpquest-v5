@@ -4,6 +4,7 @@ type GamePhase = 'menu' | 'character_creation' | 'world_map' | 'battle' | 'train
 
 interface GameState {
   currentPhase: GamePhase;
+  previousPhase: GamePhase | null;
   isLoading: boolean;
   soundEnabled: boolean;
   musicVolume: number;
@@ -12,6 +13,7 @@ interface GameState {
 
 const initialState: GameState = {
   currentPhase: 'menu',
+  previousPhase: null,
   isLoading: false,
   soundEnabled: true,
   musicVolume: 0.7,
@@ -23,6 +25,7 @@ const gameSlice = createSlice({
   initialState,
   reducers: {
     setGamePhase: (state, action: PayloadAction<GamePhase>) => {
+      state.previousPhase = state.currentPhase;
       state.currentPhase = action.payload;
     },
     
@@ -47,7 +50,16 @@ const gameSlice = createSlice({
     },
     
     returnToMenu: (state) => {
+      state.previousPhase = state.currentPhase;
       state.currentPhase = 'menu';
+    },
+    
+    goBackToPrevious: (state) => {
+      if (state.previousPhase) {
+        const temp = state.currentPhase;
+        state.currentPhase = state.previousPhase;
+        state.previousPhase = temp;
+      }
     }
   }
 });
@@ -59,7 +71,8 @@ export const {
   setMusicVolume, 
   setSfxVolume, 
   startNewGame, 
-  returnToMenu 
+  returnToMenu,
+  goBackToPrevious
 } = gameSlice.actions;
 
 export default gameSlice.reducer;

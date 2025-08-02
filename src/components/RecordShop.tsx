@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { useDispatch } from 'react-redux';
+import { useAppDispatch, useAppSelector } from '@/hooks/useAppSelector';
 import { setGamePhase } from '@/store/slices/gameSlice';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -10,7 +10,8 @@ import { ArrowLeft, Music, Play, MapPin, Search, Disc3 } from 'lucide-react';
 import { krumpProducers, getAllCountries, getProducersByCountry } from '@/data/krumpProducers';
 
 export default function RecordShop() {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
+  const { previousPhase } = useAppSelector(state => state.game);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCountry, setSelectedCountry] = useState('All');
 
@@ -35,7 +36,11 @@ export default function RecordShop() {
   }, [selectedCountry, searchTerm]);
 
   const handleBack = () => {
-    dispatch(setGamePhase('overworld_exploration'));
+    if (previousPhase === 'overworld_exploration') {
+      dispatch(setGamePhase('overworld_exploration'));
+    } else {
+      dispatch(setGamePhase('world_map'));
+    }
   };
 
   return (
@@ -64,7 +69,7 @@ export default function RecordShop() {
             className="text-white hover:bg-white/10 transition-all duration-300"
           >
             <ArrowLeft className="h-4 w-4 mr-2" />
-            Back to Streets
+            {previousPhase === 'overworld_exploration' ? 'Back to Streets' : 'Back to World Map'}
           </Button>
         </div>
 

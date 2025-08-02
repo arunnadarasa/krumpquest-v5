@@ -5,7 +5,7 @@ import { Progress } from '@/components/ui/progress';
 import { Badge } from '@/components/ui/badge';
 import { useAppDispatch, useAppSelector } from '@/hooks/useAppSelector';
 import { trainSkill } from '@/store/slices/playerSlice';
-import { setGamePhase } from '@/store/slices/gameSlice';
+import { setGamePhase, goBackToPrevious } from '@/store/slices/gameSlice';
 import { TrainingStats } from '@/types/game';
 import { getPlayerSprite } from '@/utils/playerSprites';
 import trainingCenterBg from '@/assets/training-center-bg.jpg';
@@ -56,6 +56,7 @@ const trainingTypes = [
 export default function TrainingCenter() {
   const dispatch = useAppDispatch();
   const { training, stats, primaryStyle, name } = useAppSelector(state => state.player);
+  const { previousPhase } = useAppSelector(state => state.game);
   const [justTrained, setJustTrained] = useState<string | null>(null);
   const [showDetails, setShowDetails] = useState<string | null>(null);
 
@@ -66,7 +67,11 @@ export default function TrainingCenter() {
   };
 
   const handleBackToMap = () => {
-    dispatch(setGamePhase('world_map'));
+    if (previousPhase === 'overworld_exploration') {
+      dispatch(setGamePhase('overworld_exploration'));
+    } else {
+      dispatch(setGamePhase('world_map'));
+    }
   };
 
   const handleWisdom = () => {
@@ -277,8 +282,10 @@ export default function TrainingCenter() {
                   size="lg" 
                   className="flex-1 h-12 md:h-auto md:flex-none bg-white/10 text-white border-white/20 hover:bg-white/20"
                 >
-                  <span className="md:hidden">← Map</span>
-                  <span className="hidden md:inline">Back to World Map</span>
+                  <span className="md:hidden">← Back</span>
+                  <span className="hidden md:inline">
+                    {previousPhase === 'overworld_exploration' ? 'Back to City' : 'Back to World Map'}
+                  </span>
                 </Button>
                 <Button 
                   onClick={handleWisdom} 
