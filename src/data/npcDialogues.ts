@@ -1113,6 +1113,69 @@ export const npcDialogues: Record<string, NPCDialogue[]> = {
   ],
   'mexico-mexicocity': [
     {
+      id: 'aztec-dancer',
+      name: 'Maria "Aztec Flame"',
+      dialogues: {
+        initial: [
+          "¡Hola! Welcome to the heart of Aztlan! Here, ancient spirits dance through modern streets!",
+          "You seek the power of our ancestors in your movements, ¿sí?"
+        ],
+        conversations: [
+          {
+            id: 'about-aztec-heritage',
+            text: "Our danza carries the fire of Quetzalcoatl and the power of ancient rituals! Krump here is ceremonial - every move honors our ancestors!",
+            responses: [
+              { text: "How do you connect ancient and modern?", nextId: 'ancient-modern' },
+              { text: "Tell me about the local champion", nextId: 'about-boss' },
+              { text: "Where can I learn these ways?", nextId: 'training-guidance' }
+            ]
+          },
+          {
+            id: 'ancient-modern',
+            text: "In Tenochtitlan's ruins, we found the rhythm of eternity! Now we channel warrior spirits through street dance - same power, new form!",
+            responses: [
+              { text: "That sounds incredibly powerful", nextId: 'power-response' },
+              { text: "Teach me the warrior way", nextId: 'training-guidance' }
+            ]
+          },
+          {
+            id: 'about-boss',
+            text: "Lucha Libre Luis fights like an ancient jaguar warrior! His style blends wrestling power with sacred dance - truly fearsome!",
+            responses: [
+              { text: "How do I prepare for such power?", nextId: 'warrior-preparation' },
+              { text: "Sounds like a legend", nextId: 'farewell' }
+            ]
+          },
+          {
+            id: 'training-guidance',
+            text: "Visit the studios near the Zócalo! Train among the spirits of our ancestors, let their strength flow through your body!",
+            responses: [
+              { text: "I'll honor the ancestors", nextId: 'farewell' }
+            ]
+          },
+          {
+            id: 'power-response',
+            text: "¡Exacto! When you dance with the spirits of warriors, every movement becomes a prayer, every battle becomes sacred!",
+            responses: [
+              { text: "I want to learn this power", nextId: 'training-guidance' },
+              { text: "Incredible", nextId: 'farewell' }
+            ]
+          },
+          {
+            id: 'warrior-preparation',
+            text: "Build your spirit like obsidian - sharp and unbreakable! Train your body like a jaguar - powerful and graceful! ¡Que viva México!",
+            responses: [
+              { text: "Gracias for the guidance", nextId: 'farewell' }
+            ]
+          },
+          {
+            id: 'farewell',
+            text: "¡Hasta la vista! May the ancestors guide your dance!"
+          }
+        ]
+      }
+    },
+    {
       id: 'lucha-libre-veteran',
       name: 'Carlos "El Luchador"',
       dialogues: {
@@ -1154,6 +1217,69 @@ export const npcDialogues: Record<string, NPCDialogue[]> = {
   ],
   'egypt-cairo': [
     {
+      id: 'nile-philosopher',
+      name: 'Amira "Nile Wisdom"',
+      dialogues: {
+        initial: [
+          "Ahlan wa sahlan! Welcome to Cairo, where the Nile flows eternal and dance carries the wisdom of pharaohs!",
+          "You seek the ancient knowledge that moves through time like the great river?"
+        ],
+        conversations: [
+          {
+            id: 'about-nile-wisdom',
+            text: "The Nile has flowed for millennia, carrying stories of kings and commoners. Our dance flows the same way - eternal, powerful, connecting all!",
+            responses: [
+              { text: "How does ancient wisdom guide modern dance?", nextId: 'ancient-wisdom' },
+              { text: "Who is the greatest dancer here?", nextId: 'about-boss' },
+              { text: "Where can I learn this flow?", nextId: 'learning-path' }
+            ]
+          },
+          {
+            id: 'ancient-wisdom',
+            text: "Hieroglyphs show our ancestors dancing to honor gods. We do the same - every movement is worship, every battle is sacred ceremony!",
+            responses: [
+              { text: "That's deeply spiritual", nextId: 'spiritual-response' },
+              { text: "Teach me this sacred dance", nextId: 'learning-path' }
+            ]
+          },
+          {
+            id: 'about-boss',
+            text: "Pharaoh of Flow Amara rules like Cleopatra once did - with wisdom, grace, and absolute power! She flows like the Nile itself!",
+            responses: [
+              { text: "How do I face such majesty?", nextId: 'pharaoh-preparation' },
+              { text: "She sounds incredible", nextId: 'farewell' }
+            ]
+          },
+          {
+            id: 'learning-path',
+            text: "Study at the studios near the pyramids! Let the ancient stones teach you patience, let the Nile teach you flow!",
+            responses: [
+              { text: "I'll learn from the ancients", nextId: 'farewell' }
+            ]
+          },
+          {
+            id: 'spiritual-response',
+            text: "Insha'Allah! Dance is prayer in motion, habibi. When you move with purpose, you connect to something greater than yourself!",
+            responses: [
+              { text: "I want to find that connection", nextId: 'learning-path' },
+              { text: "Beautiful wisdom", nextId: 'farewell' }
+            ]
+          },
+          {
+            id: 'pharaoh-preparation',
+            text: "Flow like the Nile - patient but unstoppable! Study the hieroglyphs of movement, learn the rhythm of eternity! Ma'a salama!",
+            responses: [
+              { text: "Shukran for your wisdom", nextId: 'farewell' }
+            ]
+          },
+          {
+            id: 'farewell',
+            text: "Fi aman Allah! May the Nile's wisdom guide your journey!"
+          }
+        ]
+      }
+    },
+    {
       id: 'pharaoh-mystic',
       name: 'Hassan "Desert Storm"',
       dialogues: {
@@ -1193,6 +1319,69 @@ export const npcDialogues: Record<string, NPCDialogue[]> = {
     }
   ],
   'canada-toronto': [
+    {
+      id: 'multicultural-mentor',
+      name: 'Preet "Unity"',
+      dialogues: {
+        initial: [
+          "Welcome to Toronto, eh! The most multicultural city in the world - our Krump reflects that beautiful diversity!",
+          "Here, every culture adds its flavor to the dance. You ready to taste the world?"
+        ],
+        conversations: [
+          {
+            id: 'about-diversity',
+            text: "Toronto Krump is like our city - Jamaican power, Indian rhythm, Chinese precision, African soul - all united in one beautiful dance!",
+            responses: [
+              { text: "How do you blend so many styles?", nextId: 'fusion-method' },
+              { text: "Who represents this unity best?", nextId: 'about-boss' },
+              { text: "Where can I learn this fusion?", nextId: 'training-spots' }
+            ]
+          },
+          {
+            id: 'fusion-method',
+            text: "Just like our neighborhoods! Each culture brings its strength, and together we create something stronger than any single tradition!",
+            responses: [
+              { text: "That's the Canadian way", nextId: 'canadian-spirit' },
+              { text: "Teach me this unity", nextId: 'training-spots' }
+            ]
+          },
+          {
+            id: 'about-boss',
+            text: "Arctic Storm Zoe embodies our northern spirit - cool, powerful, unstoppable! She brings winter's fury to the dance floor!",
+            responses: [
+              { text: "How do I prepare for the storm?", nextId: 'storm-preparation' },
+              { text: "Sounds formidable", nextId: 'farewell' }
+            ]
+          },
+          {
+            id: 'training-spots',
+            text: "Train in Kensington Market studios! Every culture teaches there - learn from everyone, reject no wisdom, eh!",
+            responses: [
+              { text: "I'll embrace all traditions", nextId: 'farewell' }
+            ]
+          },
+          {
+            id: 'canadian-spirit',
+            text: "Exactly! We're polite but powerful, diverse but united! That's the secret of Canadian Krump - strength through respect!",
+            responses: [
+              { text: "I love that philosophy", nextId: 'training-spots' },
+              { text: "True north strong and free!", nextId: 'farewell' }
+            ]
+          },
+          {
+            id: 'storm-preparation',
+            text: "Bundle up your spirit, bring your cultural fire, and remember - even storms eventually calm. Stay humble, stay strong!",
+            responses: [
+              { text: "Thanks for the wisdom, eh!", nextId: 'farewell' }
+            ]
+          },
+          {
+            id: 'farewell',
+            text: "Take care now! May all cultures guide your steps!"
+          }
+        ]
+      }
+    },
     {
       id: 'cn-tower-dancer',
       name: 'Alex "Maple Leaf"',
@@ -1234,6 +1423,69 @@ export const npcDialogues: Record<string, NPCDialogue[]> = {
   ],
   'italy-rome': [
     {
+      id: 'trastevere-local',
+      name: 'Francesca "Bella Danza"',
+      dialogues: {
+        initial: [
+          "Ciao bello! Welcome to Roma Eterna! Here, Krump flows like wine and moves like ancient gladiators!",
+          "You want to dance with Roman passion? Bene!"
+        ],
+        conversations: [
+          {
+            id: 'about-rome',
+            text: "Roma gives Krump SOUL and HISTORY! Every stone tells a story, every movement echoes the Colosseum's roar!",
+            responses: [
+              { text: "How does history influence your dance?", nextId: 'historical-influence' },
+              { text: "Who's the champion here?", nextId: 'about-boss' },
+              { text: "Where do you train in Rome?", nextId: 'training-locations' }
+            ]
+          },
+          {
+            id: 'historical-influence',
+            text: "We dance like gladiators fought - with HONOR and PASSION! Every battle in the cipher is like the ancient arena!",
+            responses: [
+              { text: "That's incredibly inspiring", nextId: 'inspiration-response' },
+              { text: "Teach me the gladiator way", nextId: 'training-locations' }
+            ]
+          },
+          {
+            id: 'about-boss',
+            text: "Renaissance Rebel Marco! He moves like Michelangelo sculpted motion itself - perfection with rebellious fire!",
+            responses: [
+              { text: "How do I face such artistry?", nextId: 'artistic-preparation' },
+              { text: "Sounds like a master", nextId: 'farewell' }
+            ]
+          },
+          {
+            id: 'training-locations',
+            text: "Train near the Fontana di Trevi! Make a wish, then make it reality through dance! The old masters' spirits still guide us!",
+            responses: [
+              { text: "I'll dance with the masters", nextId: 'farewell' }
+            ]
+          },
+          {
+            id: 'inspiration-response',
+            text: "Sì! When you dance in Roma, you carry 3000 years of passion! Every movement is connected to eternity, capisce?",
+            responses: [
+              { text: "I want to feel that connection", nextId: 'training-locations' },
+              { text: "Che bello!", nextId: 'farewell' }
+            ]
+          },
+          {
+            id: 'artistic-preparation',
+            text: "Study the masters - Bernini's movement, Caravaggio's drama! Bring Renaissance beauty to street power! Forza!",
+            responses: [
+              { text: "Grazie mille for the guidance", nextId: 'farewell' }
+            ]
+          },
+          {
+            id: 'farewell',
+            text: "Arrivederci! May Roman passion guide your dance!"
+          }
+        ]
+      }
+    },
+    {
       id: 'renaissance-artist',
       name: 'Lorenzo "Il Maestro"',
       dialogues: {
@@ -1273,6 +1525,69 @@ export const npcDialogues: Record<string, NPCDialogue[]> = {
     }
   ],
   'south-africa-capetown': [
+    {
+      id: 'waterfront-guide',
+      name: 'Zara "Mountain Dance"',
+      dialogues: {
+        initial: [
+          "Sawubona! Welcome to Cape Town, where Table Mountain meets the ocean and dance flows like the winds!",
+          "The Mother City has its own rhythm - you feel it?"
+        ],
+        conversations: [
+          {
+            id: 'about-cape-town',
+            text: "Cape Town Krump draws power from the mountain and flow from the ocean. We call it 'Mountain Dance' - grounded but free!",
+            responses: [
+              { text: "How does the landscape influence your style?", nextId: 'landscape-influence' },
+              { text: "Who leads the scene here?", nextId: 'about-boss' },
+              { text: "Where can I train?", nextId: 'training-info' }
+            ]
+          },
+          {
+            id: 'landscape-influence',
+            text: "Table Mountain teaches us to be STRONG and steady, the ocean teaches us to FLOW. Together - unstoppable power with natural grace!",
+            responses: [
+              { text: "That's a beautiful philosophy", nextId: 'philosophy-response' },
+              { text: "Can you teach me this style?", nextId: 'training-info' }
+            ]
+          },
+          {
+            id: 'about-boss',
+            text: "Township Thunder Nomsa represents our community's heart! Her moves carry the strength of our people and the beauty of our land!",
+            responses: [
+              { text: "How do I prepare to face her?", nextId: 'boss-preparation' },
+              { text: "She sounds formidable", nextId: 'farewell' }
+            ]
+          },
+          {
+            id: 'training-info',
+            text: "Train at the waterfront studios with the mountain as your witness! Feel the rhythm of the waves, the strength of the earth!",
+            responses: [
+              { text: "I'll train with the elements", nextId: 'farewell' }
+            ]
+          },
+          {
+            id: 'philosophy-response',
+            text: "Ubuntu - we are who we are through others and through the land. Krump here is about community and connection to Mother Earth!",
+            responses: [
+              { text: "I want to learn more", nextId: 'training-info' },
+              { text: "That's profound", nextId: 'farewell' }
+            ]
+          },
+          {
+            id: 'boss-preparation',
+            text: "Learn to move like the mountain - unshakeable! Learn to flow like the ocean - endless! Combine them with township spirit!",
+            responses: [
+              { text: "Ngiyabonga for the wisdom", nextId: 'farewell' }
+            ]
+          },
+          {
+            id: 'farewell',
+            text: "Sala kahle! May the mountain give you strength and the ocean give you flow!"
+          }
+        ]
+      }
+    },
     {
       id: 'township-elder',
       name: 'Mandla "Ubuntu Spirit"',
