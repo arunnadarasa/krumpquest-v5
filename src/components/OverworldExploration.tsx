@@ -75,10 +75,10 @@ export default function OverworldExploration() {
     if (!nearestInteractable) return;
     
     if (nearestInteractable.type === 'battle_trigger') {
-      const opponents = locationOpponents[currentLocation?.id || ''];
-      if (opponents && Array.isArray(opponents) && opponents.length > 0) {
+      const opponent = locationOpponents[currentLocation?.id || ''];
+      if (opponent) {
         dispatch(startBattle({
-          opponent: opponents[0],
+          opponent: opponent,
           playerStamina: player.stats.stamina,
           playerStats: player.stats
         }));
